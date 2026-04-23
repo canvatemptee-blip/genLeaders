@@ -1,3 +1,5 @@
+import React from 'react'
+
 const ActionCard = ({
     title,
     description,
@@ -5,12 +7,13 @@ const ActionCard = ({
     btnText,
     link,
     variant = "primary",
-    bg = "dark"
+    bg = "dark",
+    wrapperClass = "col-md-6"
 }) => {
     const isDark = bg === "dark"
 
     return (
-        <div className="col-md-6">
+        <div className={wrapperClass}>
             <div
                 className="card h-100 border-0 rounded-4 p-1 custom-hover-card"
                 style={{ backgroundColor: isDark ? '#1e293b' : '#f8fafc' }}
@@ -29,7 +32,10 @@ const ActionCard = ({
                         {title}
                     </h4>
 
-                    <p className={`card-text mb-4 flex-grow-1 small ${isDark ? '' : 'text-muted'}`} style={{ color: isDark ? '#94a3b8' : undefined }}>
+                    <p
+                        className={`card-text mb-4 flex-grow-1 small ${isDark ? '' : 'text-muted'}`}
+                        style={{ color: isDark ? '#94a3b8' : undefined }}
+                    >
                         {description}
                     </p>
 
